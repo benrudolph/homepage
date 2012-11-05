@@ -42,3 +42,14 @@
   fill: red;
 }
 
+.labCircle {
+  fill-opacity: 0;
+  cursor: pointer;
+  stroke: black;
+  stroke-width: 3px;
+}
+
+.labTitle {
+  font-size: 12px;
+  pointer-events: none;
+}

@@ -4,22 +4,7 @@ var InterestGraph = function(svg, svgWidth, svgHeight, interestData) {
   this.svgHeight = svgHeight
   this.height = 300
   this.width = 400
-  this.barGraph = this.svg
-      .append("svg:g")
-      .attr("height", this.height)
-      .attr("width", this.width)
-      .attr("transform", "translate(" + ((this.svgWidth / 2) - (this.width / 2)) + ", " +
-            ((this.svgHeight / 2) - (this.height / 2)) + ")")
-
   this.legendWidth = 200
-
-  this.legend = this.svg
-      .append("svg:g")
-      .attr("class", "legend")
-      .attr("height", this.height)
-      .attr("width", this.legendWidth)
-      .attr("transform", "translate(" + ((this.svgWidth / 2) + (this.width / 2)) + ", " +
-            ((this.svgHeight / 2) - (this.height / 2)) + ")")
 
 
   this.barWidth = 20
@@ -59,7 +44,26 @@ InterestGraph.prototype.setDomain = function() {
       .domain(this.domain)
 }
 
+InterestGraph.prototype.init = function() {
+  this.barGraph = this.svg
+      .append("svg:g")
+      .attr("height", this.height)
+      .attr("width", this.width)
+      .attr("transform", "translate(" + ((this.svgWidth / 2) - (this.width / 2)) + ", " +
+            ((this.svgHeight / 2) - (this.height / 2)) + ")")
+
+  this.legend = this.svg
+      .append("svg:g")
+      .attr("class", "legend")
+      .attr("height", this.height)
+      .attr("width", this.legendWidth)
+      .attr("transform", "translate(" + ((this.svgWidth / 2) + (this.width / 2)) + ", " +
+            ((this.svgHeight / 2) - (this.height / 2)) + ")")
+
+}
+
 InterestGraph.prototype.render = function() {
+
   this.setDomain()
 
   var bars = this.barGraph

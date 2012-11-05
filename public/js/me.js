@@ -52,9 +52,39 @@ var Me = function() {
     ]
 
   }
+
   this.interestGraph = new InterestGraph(this.svg, this.width, this.height, this.interestData)
 
-  this.beaker = new Beaker(this.svg, this.width, this.height, [])
+  this.beakerData = [{
+    children: [{
+      name: "Africa Refugee Visualization",
+      link: "http://vast-gorge-6646.herokuapp.com/",
+      size: 100,
+      image: "images/africarefugees.png"
+    },
+    {
+      name: "8th Grade Visualization",
+      link: "http://mysterious-spire-4062.herokuapp.com/",
+      size: 100,
+      image: "images/parallelcoords.png"
+    },
+    {
+      name: "International Refugee Flows",
+      link: "http://blooming-brook-1209.herokuapp.com/",
+      size: 100,
+      image: "images/refugeeflows.png"
+    },
+    {
+      name: "Dogger",
+      link: "http://www.youtube.com/watch?v=BLXYJ1S82nI",
+      size: 100,
+      image: "images/beaker.svg"
+
+    }],
+    name: "Labs"
+  }]
+
+  this.beaker = new Beaker(this.svg, this.width, this.height, this.beakerData)
 
 
 }
@@ -145,10 +175,12 @@ Me.prototype.clear = function() {
 
 Me.prototype.renderInterests = function() {
   this.clear()
+  this.interestGraph.init()
   this.interestGraph.render()
 }
 
 Me.prototype.renderLabs = function(){
   this.clear()
+  this.beaker.init()
   this.beaker.render()
 }
