@@ -1,0 +1,44 @@
+.circle {
+  /*fill: #537bff;*/
+  fill: blue;
+  stroke-width: 5;
+  stroke: black;
+  fill-opacity: .7;
+  cursor: pointer;
+}
+
+.circleText {
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.barLabel {
+  font-size: 12px;
+}
+
+.bar {
+  fill: white;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.xaxis {
+  stroke: black;
+  stroke-width: 3px;
+}
+
+.categoryContainer {
+  stroke: black;
+  stroke-width: 2px;
+  fill-opacity: .1;
+  cursor: pointer
+}
+
+.categoryText {
+  pointer-events: none;
+}
+
+.selectedCategory {
+  fill: red;
+}
+
