@@ -1,8 +1,12 @@
 .circle {
   stroke-width: 3;
   stroke: #191919;
-  fill-opacity: .3;
+  fill-opacity: .2;
   cursor: pointer;
+}
+
+.circle:hover {
+  fill-opacity: .4;
 }
 
 .textCircle, #headerCircle {
@@ -71,10 +75,15 @@
 }
 
 #homeBtn {
-  fill: white;
+  fill: blue;
+  fill-opacity: .2;
   stroke: #191919;
   stroke-width: 2px;
   cursor: pointer;
+}
+
+#homeBtn:hover {
+  fill-opacity: .4;
 }
 
 #homeText {
