@@ -99,3 +99,9 @@
   stroke: #191919;
   stroke-width: 3px;
 }
+
+#labinfo {
+  position:absolute;
+  width: 200px;
+}
+

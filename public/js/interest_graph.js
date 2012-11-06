@@ -11,7 +11,7 @@ var InterestGraph = function(svg, svgWidth, svgHeight, interestData) {
   this.padding = 10
 
   this.data = d3.map(interestData)
-  this.selectedCategory = "technology"
+  this.selectedCategory = "technical"
   this.selectedData = this.data.get(this.selectedCategory)
 
   this.domain = []

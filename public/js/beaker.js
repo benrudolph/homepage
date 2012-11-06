@@ -6,6 +6,9 @@ var Beaker = function(svg, svgWidth, svgHeight, beakerData) {
   this.width = 400
   this.beaker = undefined
   this.data = beakerData
+  this.infoSelector = "#labinfo"
+  $(this.infoSelector).css({ left: (this.svgWidth / 2) + (this.width / 2) + "px",
+                             top:  (this.svgHeight / 2) - (this.height / 2) + "px" })
 
 
   this.pack = d3
@@ -41,26 +44,6 @@ Beaker.prototype.render = function() {
         return "translate(" + d.x + "," + d.y + ")";
       })
 
-  lab.filter(function(d) { return !d.children; }).append("g")
-      .attr("transform", function(d) {
-        return "translate(0, " + -d.r + ")"
-      })
-      .each(function(d) {
-        if (d.children)
-          return
-        var options = {
-          title: d.name,
-          trigger: "hover",
-          content: "yay",
-          placement: "top"
-        }
-        $(this).popover(options)
-      })
-      .attr("id", function(d) {
-        return d.name.replace(/ /g, "")
-      })
-
-
   lab.filter(function(d) { return !d.children; }).append("image")
       .attr("xlink:href", function(d) {
         return d.image
@@ -92,12 +75,22 @@ Beaker.prototype.render = function() {
       .on("click", function(d) {
         window.open(d.link, '_blank');
       })
-      .on("mouseover", function(d) {
-        if (!d.children)
-          $("#" + d.name.replace(/ /g,"")).trigger("mouseover")
-      })
-      .on("mouseout", function(d) {
-        if (!d.children)
-          $("#" + d.name.replace(/ /g,"")).trigger("mouseout")
-      })
+      .on("mouseover", this.displayInfo.bind(this))
+      .on("mouseout", this.hideInfo.bind(this))
+}
+
+Beaker.prototype.displayInfo = function(d) {
+  if (d.children)
+    return
+  $(this.infoSelector).css("display","block")
+  $(this.infoSelector + " .name").text(d.name)
+  $(this.infoSelector + " .description").text(d.description)
+
+}
+
+Beaker.prototype.hideInfo = function(d) {
+  if (d.children)
+    return
+  $(this.infoSelector).css("display","none")
+
 }
