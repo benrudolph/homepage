@@ -47,12 +47,15 @@
 }
 
 .selectedCategory {
-  fill: red;
+  fill: blue;
 }
 
 .labCircle {
   fill-opacity: 0;
   cursor: pointer;
+}
+
+.leaf {
   stroke: #191919;
   stroke-width: 3px;
 }

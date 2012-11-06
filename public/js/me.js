@@ -69,24 +69,42 @@ var Me = function() {
       name: "Africa Refugee Visualization",
       link: "http://vast-gorge-6646.herokuapp.com/",
       size: 100,
+      description: "",
       image: "images/africarefugees.png"
     },
     {
       name: "8th Grade Visualization",
       link: "http://mysterious-spire-4062.herokuapp.com/",
       size: 90,
+      description: "",
       image: "images/parallelcoords.png"
+    },
+    {
+      name: "Support CRES",
+      link: "http://supportcres.org",
+      size: 61,
+      description: "",
+      image: "images/cres.png"
+    },
+    {
+      name: "Hacker News Predict",
+      link: "/report.pdf",
+      size: 90,
+      description: "",
+      image: "images/hnpredict.png"
     },
     {
       name: "International Refugee Flows",
       link: "http://blooming-brook-1209.herokuapp.com/",
       size: 80,
+      description: "",
       image: "images/refugeeflows.png"
     },
     {
       name: "Dogger",
       link: "http://www.youtube.com/watch?v=BLXYJ1S82nI",
       size: 67,
+      description: "",
       image: "images/dogger.png"
 
     }],
