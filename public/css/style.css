@@ -1,11 +1,19 @@
 .circle {
-  /*fill: #537bff;*/
-  fill: blue;
-  stroke-width: 5;
-  stroke: black;
-  fill-opacity: .7;
+  stroke-width: 3;
+  stroke: #191919;
+  fill-opacity: .3;
   cursor: pointer;
 }
+
+.textCircle, #headerCircle {
+  fill: blue;
+}
+
+.imageCircle {
+  fill: #191919;
+  fill-opacity: 1;
+}
+
 
 .circleText {
   font-size: 18px;
@@ -18,17 +26,17 @@
 
 .bar {
   fill: white;
-  stroke: black;
+  stroke: #191919;
   stroke-width: 1px;
 }
 
 .xaxis {
-  stroke: black;
+  stroke: #191919;
   stroke-width: 3px;
 }
 
 .categoryContainer {
-  stroke: black;
+  stroke: #191919;
   stroke-width: 2px;
   fill-opacity: .1;
   cursor: pointer
@@ -45,11 +53,37 @@
 .labCircle {
   fill-opacity: 0;
   cursor: pointer;
-  stroke: black;
+  stroke: #191919;
   stroke-width: 3px;
 }
 
 .labTitle {
   font-size: 12px;
   pointer-events: none;
+}
+
+.resumeContainer {
+  stroke: #191919;
+  stroke-width: 2px;
+}
+
+#homeBtn {
+  fill: white;
+  stroke: #191919;
+  stroke-width: 2px;
+  cursor: pointer;
+}
+
+#homeText {
+  pointer-events: none;
+}
+
+#headerText {
+  font-size: 34px;
+}
+
+.aboutCircle {
+  fill-opacity: 0;
+  stroke: #191919;
+  stroke-width: 3px;
 }
