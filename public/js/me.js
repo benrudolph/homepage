@@ -145,24 +145,21 @@ Me.prototype.render = function() {
 Me.prototype.renderHomeButton = function() {
 
   this.svg
-      .append("rect")
-      .attr("x", -this.homeStroke)
-      .attr("y", -this.homeStroke)
-      .attr("ry", this.homeStroke)
-      .attr("rx", this.homeStroke)
-      .attr("width", this.homeWidth)
-      .attr("height", this.homeHeight)
+      .append("circle")
+      .attr("cx", 0)
+      .attr("cy", 0)
+      .attr("r", this.homeWidth)
       .attr("id", "homeBtn")
       .on("click", this.onHomeClick.bind(this))
 
   this.svg
-      .append("text")
-      .attr("x", this.homeWidth / 2 - this.homeStroke)
-      .attr("y", this.homeHeight / 2 - this.homeStroke)
-      .attr("dy", ".35em") // vertical-align: middle
-      .attr("text-anchor", "middle")
+      .append("image")
+      .attr("xlink:href", "images/home.svg")
+      .attr("x", 5)
+      .attr("y", 5)
+      .attr("width", 32)
+      .attr("height", 32)
       .attr("id", "homeText")
-      .text("Home")
 
 }
 
