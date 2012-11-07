@@ -26,4 +26,16 @@ Resume.prototype.render = function() {
       .attr("y", 0)
       .attr("class", "resume")
 
+  this.page
+      .append("image")
+      .attr("xlink:href", "images/download.svg")
+      .attr("width", 30)
+      .attr("height", 30)
+      .attr("x", this.width - 250)
+      .attr("y", 0)
+      .attr("class", "download")
+      .on("click", function() {
+        window.open("/resume.pdf", "_blank")
+      })
+
 }
