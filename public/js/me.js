@@ -6,6 +6,10 @@ var Me = function() {
                      { row: 1, column: 1, category: "Interests"},
                      { row: 1, column: 2, category: "Resume"}]
 
+
+  this.links = [{ type: "linkedin", url: "http://www.linkedin.com/in/brudolph", image: "images/linkedin.png" },
+                { type: "wordpress", url: "http://www.pennyhacks.com", image: "images/wordpress.png" }]
+
   this.radius = 75
   this.radiusMain = 150
   this.height = $(document).height() > 600 ? $(document).height() : 600
@@ -14,6 +18,15 @@ var Me = function() {
   this.homeWidth = 60
   this.homeHeight = 30
   this.homeStroke = 2
+
+  this.radiusLink = 17.5
+  this.yLink = this.height - (3 * this.radiusLink)
+  this.xLink = d3
+      .scale
+      .ordinal()
+      .rangePoints([(this.width / 2) - ((this.links.length / 2) * this.radiusLink) - (this.radiusLink / 4),
+                    (this.width / 2) + ((this.links.length / 2) * this.radiusLink) + (this.radiusLink / 4)])
+      .domain(["linkedin", "wordpress"])
 
   this.y = d3
       .scale
@@ -183,6 +196,29 @@ Me.prototype.renderHome = function(_animate) {
   var images = this.svg
       .selectAll(".image")
       .data(this.categories.filter(function(d) { return d.image }))
+
+  var links = this.svg
+      .selectAll(".link")
+      .data(this.links)
+
+  links
+      .enter()
+      .append("image")
+      .attr("class", function(d) {
+        return "link " + d.type
+      })
+      .attr("xlink:href", function(d) {
+        return d.image
+      })
+      .attr("width", 2 * this.radiusLink)
+      .attr("height", 2 * this.radiusLink)
+      .attr("x", function(d) {
+        return this.xLink(d.type) - this.radiusLink
+      }.bind(this))
+      .attr("y", this.yLink - this.radiusLink)
+      .on("click", function(d) {
+        window.open(d.url, "_blank")
+      })
 
   circles
       .enter()
