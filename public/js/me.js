@@ -52,15 +52,29 @@ var Me = function() {
       .append("svg:g")
 
   this.interestData = {
-    technical: [
-      { interest: "d3.js",
-        score: 100 },
+    languages: [
+      { interest: "C++",
+        score: 32 },
       { interest: "javascript",
         score: 82 },
       { interest: "python",
         score: 52 },
       { interest: "ruby",
         score: 74 }
+    ],
+    frameworks: [
+      { interest: "ruby on rails",
+        score: 46 },
+      { interest: "node.js",
+        score: 83 },
+      { interest: "django",
+        score: 72 },
+    ],
+    libraries: [
+      { interest: "d3.js",
+        score: 100 },
+      { interest: "three.js",
+        score: 100 },
     ],
     activities: [
       { interest: "gymnastics",
