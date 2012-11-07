@@ -325,6 +325,8 @@ Me.prototype.onHomeClick = function() {
 
 Me.prototype.clear = function() {
   $("svg g:first").empty()
+  $("#about").css("display", "none")
+
 }
 
 Me.prototype.renderInterests = function() {

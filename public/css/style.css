@@ -94,6 +94,13 @@
   font-size: 34px;
 }
 
+#about {
+  position: absolute;
+  width: 360px;
+  height: 400px;
+  text-align: center;
+}
+
 .aboutCircle {
   fill-opacity: 0;
   stroke: #191919;
