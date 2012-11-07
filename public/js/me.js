@@ -12,8 +12,8 @@ var Me = function() {
 
   this.radius = 75
   this.radiusMain = 150
-  this.height = $(document).height() > 600 ? $(document).height() : 600
-  this.width = $(document).width() > 700 ? $(document).width() : 700
+  this.height = $(document).height() - 5 > 600 ? $(document).height() - 5 : 600
+  this.width = $(document).width() - 5 > 700 ? $(document).width() - 5 : 700
   this.padding = 30
   this.homeWidth = 60
   this.homeHeight = 30
