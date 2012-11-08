@@ -104,21 +104,21 @@ var Me = function() {
       name: "Africa Refugee Visualization",
       link: "http://vast-gorge-6646.herokuapp.com/",
       size: 100,
-      description: "This is a visualization of refugee camp populations in Africa. It allows you to select groups of camps on the scatter plots and then immediately see where those camps are located allowing for some interesting conclusions. Also by clicking marker you can see the exact age breakdown of that particular camp.",
+      description: "This is a visualization of refugee camp populations in Africa. It allows you to select groups of camps on the scatter plots and then immediately see where those camps are located allowing for some interesting conclusions. Also by clicking a marker you can see the exact age breakdown for that particular camp.",
       image: "images/africarefugees.png"
     },
     {
       name: "8th Grade Visualization",
       link: "http://mysterious-spire-4062.herokuapp.com/",
       size: 90,
-      description: "I worked on this with a partner, Reno Bowen, in my Data Visualization class. We basically took an exhuastive study of 8th graders and found the most interesting patterns and made a interactive visualization. We used Tableau for prototyping and d3.js for the actual implementation",
+      description: "I worked on this with a partner, Reno Bowen, in my Data Visualization class. We basically took an exhuastive study of 8th graders and found the most interesting patterns and made an interactive visualization. We used Tableau for prototyping and d3.js for the actual implementation.",
       image: "images/parallelcoords.png"
     },
     {
       name: "Support CRES",
       link: "http://supportcres.org",
       size: 61,
-      description: "This is a website for a school for the deaf in Cameroon, Africa. My sister, Lisa, volunteered at the school for 3 months and is currently raising and awareness about the school. The website explains CRES' mission and life at the school. It is also used to help raise money and awareness of the school.",
+      description: "This is a website for a school for the deaf in Cameroon, Africa. My sister, Lisa, volunteered at the school for 3 months and is currently raising money and awareness about the school. The website explains CRES' mission and life at the school.",
       image: "images/cres.png"
     },
     {
@@ -132,14 +132,14 @@ var Me = function() {
       name: "International Refugee Flows",
       link: "http://blooming-brook-1209.herokuapp.com/",
       size: 80,
-      description: "I made this from data supplied by the UN. It basically maps out for each country where its refugee originate. The contrast between different regions leads to insights about some of the different problems refugees face when fleeing to a different country.",
+      description: "I made this from data supplied by the UN. It basically maps out for each country where its refugee population originates. The contrast between different regions leads to insights about some of the different problems refugees face when fleeing to a different country.",
       image: "images/refugeeflows.png"
     },
     {
       name: "Dogger",
       link: "http://www.youtube.com/watch?v=BLXYJ1S82nI",
       size: 67,
-      description: "This was my very first android app, and satisfied my desire to finally make a mobile game. While the concept is pretty dull (it's Frogger excepter with a dog), I still learned a lot in the process. I used Beginning Android Games by Mario Zechner as a reference.",
+      description: "This was my very first android app, and satisfied my desire to finally make a mobile game. While the concept is pretty dull (it's Frogger except with a dog), I still learned a lot in the process. I used Beginning Android Games by Mario Zechner as a reference.",
       image: "images/dogger.png"
 
     }],
