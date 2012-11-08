@@ -54,6 +54,10 @@ var Me = function() {
       .append("svg:g")
       .attr("class", "home")
 
+  this.introCircle = this.svgContainer
+      .append("svg:g")
+      .attr("class", "introCircle")
+
   this.interestData = {
     languages: [
       { interest: "C++",
@@ -155,7 +159,7 @@ var Me = function() {
 
 Me.prototype.render = function() {
 
-  this.svg
+  this.introCircle
       .append("circle")
       .attr("cx", this.width / 2)
       .attr("cy", this.height / 2)
@@ -164,7 +168,7 @@ Me.prototype.render = function() {
       .attr("class", "circle")
       .on("mouseover", this.split.bind(this))
 
-  this.svg
+  this.introCircle
       .append("text")
       .attr("class", "circleText")
       .attr("id", "headerText")
@@ -174,11 +178,23 @@ Me.prototype.render = function() {
       .attr("dy", ".35em") // vertical-align: middle
       .text(this.header)
 
+  // Render invisible home to load images first
+  this.renderHome(false, false)
+
 }
 
-Me.prototype.renderHomeButton = function() {
+Me.prototype.renderHomeButton = function(isDisplayed) {
+  var homeBtnContainer = this.svgContainer
+      .append("svg:g")
+      .attr("class", "homeBtnContainer")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
 
-  this.svg
+  homeBtnContainer
       .append("circle")
       .attr("cx", 0)
       .attr("cy", 0)
@@ -186,7 +202,7 @@ Me.prototype.renderHomeButton = function() {
       .attr("id", "homeBtn")
       .on("click", this.onHomeClick.bind(this))
 
-  this.svg
+  homeBtnContainer
       .append("image")
       .attr("xlink:href", "images/home.svg")
       .attr("x", 5)
@@ -205,11 +221,20 @@ Me.prototype.split = function() {
       .attr("r", 0)
 
   d3.select("#headerText").remove()
-  this.renderHome()
+
+  // Empty so we can redraw with animation
+  $("svg .home").empty()
+  this.renderHome(true, true)
 }
 
-Me.prototype.renderHome = function(_animate) {
-  var animate = _animate === undefined ? true : false
+Me.prototype.renderHome = function(animate, isDisplayed) {
+
+  if (isDisplayed)
+    this.svg.style("display", "block")
+  else
+    this.svg.style("display", "none")
+
+
   var circles = this.svg
       .selectAll(".category")
       .data(this.categories)
@@ -257,6 +282,7 @@ Me.prototype.renderHome = function(_animate) {
       .attr("r", this.radius)
       .attr("fill", "steelblue")
       .on("click", function(d) {
+        this.svg.style("display", "none")
         if (d.category === "Interests")
           this.renderInterests()
         else if (d.category === "Projects")
@@ -323,15 +349,16 @@ Me.prototype.renderHome = function(_animate) {
         return this.y(d.row)
       }.bind(this))
 
+  this.renderHomeButton(false)
 }
 
 Me.prototype.onHomeClick = function() {
   this.clear()
-  this.renderHome(false)
+  this.svg.style("display", "block")
 }
 
 Me.prototype.clear = function() {
-  $("svg .home").empty()
+  this.hideHomeBtn()
   this.interestGraph.display(false)
   this.beaker.display(false)
   this.resume.display(false)
@@ -341,34 +368,32 @@ Me.prototype.clear = function() {
 
 Me.prototype.renderInterests = function() {
   this.clear()
-  this.renderHomeButton()
+  this.showHomeBtn()
   this.interestGraph.display(true)
 }
 
 Me.prototype.renderResume = function() {
   this.clear()
-  this.renderHomeButton()
+  this.showHomeBtn()
   this.resume.display(true)
 }
 
 Me.prototype.renderLabs = function(){
   this.clear()
-  this.renderHomeButton()
+  this.showHomeBtn()
   this.beaker.display(true)
 }
 
 Me.prototype.renderAbout = function(){
   this.clear()
-  this.renderHomeButton()
+  this.showHomeBtn()
   this.about.display(true)
 }
 
-Me.prototype.showHome = function() {
-  d3.select("#homeBtn").style("display", "block")
-  d3.select("#homeText").style("display", "block")
+Me.prototype.showHomeBtn = function() {
+  d3.select(".homeBtnContainer").style("display", "block")
 }
 
-Me.prototype.hideHome = function() {
-  d3.select("#homeBtn").style("display", "none")
-  d3.select("#homeText").style("display", "none")
+Me.prototype.hideHomeBtn = function() {
+  d3.select(".homeBtnContainer").style("display", "none")
 }
