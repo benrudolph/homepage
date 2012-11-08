@@ -6,7 +6,17 @@ var Resume = function(svg, svgWidth, svgHeight) {
   this.width = 1000
 }
 
-Resume.prototype.init = function() {
+Resume.prototype.display = function(isDisplayed) {
+  d3.select(".resumeContainer")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
+}
+
+Resume.prototype.render = function(isDisplayed) {
   this.page = this.svg
       .append("svg:g")
       .attr("height", this.height)
@@ -14,9 +24,13 @@ Resume.prototype.init = function() {
       .attr("class", "resumeContainer")
       .attr("transform", "translate(" + ((this.svgWidth / 2) - (this.width / 2)) + ", " +
             ((this.svgHeight / 2) - (this.height / 2)) + ")")
-}
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
 
-Resume.prototype.render = function() {
   this.page
       .append("image")
       .attr("xlink:href", "images/resume.png")

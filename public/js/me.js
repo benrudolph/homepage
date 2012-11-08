@@ -43,13 +43,16 @@ var Me = function() {
       .domain([0, 1, 2])
 
 
-  this.svg = d3
+  this.svgContainer = d3
       .select("#content")
       .append("svg")
       .attr("class", "svg")
       .attr("height", this.height)
       .attr("width", this.width)
+
+  this.svg = this.svgContainer
       .append("svg:g")
+      .attr("class", "home")
 
   this.interestData = {
     languages: [
@@ -89,7 +92,8 @@ var Me = function() {
 
   }
 
-  this.interestGraph = new InterestGraph(this.svg, this.width, this.height, this.interestData)
+  this.interestGraph = new InterestGraph(this.svgContainer, this.width, this.height, this.interestData)
+  this.interestGraph.render(false)
 
   this.beakerData = [{
     children: [{
@@ -138,11 +142,14 @@ var Me = function() {
     name: "Labs"
   }]
 
-  this.beaker = new Beaker(this.svg, this.width, this.height, this.beakerData)
+  this.beaker = new Beaker(this.svgContainer, this.width, this.height, this.beakerData)
+  this.beaker.render(false)
 
-  this.resume = new Resume(this.svg, this.width, this.height)
+  this.resume = new Resume(this.svgContainer, this.width, this.height)
+  this.resume.render(false)
 
-  this.about = new About(this.svg, this.width, this.height)
+  this.about = new About(this.svgContainer, this.width, this.height)
+  this.about.render(false)
 
 }
 
@@ -324,37 +331,36 @@ Me.prototype.onHomeClick = function() {
 }
 
 Me.prototype.clear = function() {
-  $("svg g:first").empty()
-  $("#about").css("display", "none")
+  $("svg .home").empty()
+  this.interestGraph.display(false)
+  this.beaker.display(false)
+  this.resume.display(false)
+  this.about.display(false)
 
 }
 
 Me.prototype.renderInterests = function() {
   this.clear()
   this.renderHomeButton()
-  this.interestGraph.init()
-  this.interestGraph.render()
+  this.interestGraph.display(true)
 }
 
 Me.prototype.renderResume = function() {
   this.clear()
   this.renderHomeButton()
-  this.resume.init()
-  this.resume.render()
+  this.resume.display(true)
 }
 
 Me.prototype.renderLabs = function(){
   this.clear()
   this.renderHomeButton()
-  this.beaker.init()
-  this.beaker.render()
+  this.beaker.display(true)
 }
 
 Me.prototype.renderAbout = function(){
   this.clear()
   this.renderHomeButton()
-  this.about.init()
-  this.about.render()
+  this.about.display(true)
 }
 
 Me.prototype.showHome = function() {

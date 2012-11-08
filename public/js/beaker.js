@@ -22,18 +22,31 @@ var Beaker = function(svg, svgWidth, svgHeight, beakerData) {
 
 }
 
-Beaker.prototype.init = function() {
+Beaker.prototype.display = function(isDisplayed) {
+  d3.select(".projects")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
+}
+
+Beaker.prototype.render = function(isDisplayed) {
   this.beaker = this.svg
       .append("svg:g")
       .attr("height", this.height)
       .attr("width", this.width)
+      .attr("class", "projects")
       .attr("transform", "translate(" + ((this.svgWidth / 2) - (this.width / 2)) + ", " +
             ((this.svgHeight / 2) - (this.height / 2)) + ")")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
 
-
-}
-
-Beaker.prototype.render = function() {
   var lab = this.beaker
       .data(this.data)
       .selectAll(".lab")

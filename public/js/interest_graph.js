@@ -44,15 +44,35 @@ InterestGraph.prototype.setDomain = function() {
       .domain(this.domain)
 }
 
-InterestGraph.prototype.init = function() {
-  this.barGraph = this.svg
+InterestGraph.prototype.display = function(isDisplayed) {
+  d3.select(".interestGraph")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
+}
+
+InterestGraph.prototype.render = function(isDisplayed) {
+  var interestGraph = this.svg
+      .append("svg:g")
+      .attr("class", "interestGraph")
+      .style("display", function() {
+        if (isDisplayed)
+          return "block"
+        else
+          return "none"
+      })
+
+  this.barGraph = interestGraph
       .append("svg:g")
       .attr("height", this.height)
       .attr("width", this.width)
       .attr("transform", "translate(" + ((this.svgWidth / 2) - (this.width / 2)) + ", " +
             ((this.svgHeight / 2) - (this.height / 2)) + ")")
 
-  this.legend = this.svg
+  this.legend = interestGraph
       .append("svg:g")
       .attr("class", "legend")
       .attr("height", this.height)
@@ -60,11 +80,13 @@ InterestGraph.prototype.init = function() {
       .attr("transform", "translate(" + ((this.svgWidth / 2) + (this.width / 2)) + ", " +
             ((this.svgHeight / 2) - (this.height / 2)) + ")")
 
+
+  this.renderGraph()
+  this.renderLegend()
 }
 
-InterestGraph.prototype.render = function() {
-
-  this.setDomain()
+InterestGraph.prototype.renderGraph = function() {
+   this.setDomain()
 
   var bars = this.barGraph
       .selectAll(".bar")
@@ -135,7 +157,6 @@ InterestGraph.prototype.render = function() {
       .attr("y1", this.height)
       .attr("y2", this.height)
 
-  this.renderLegend()
 }
 
 InterestGraph.prototype.renderLegend = function() {
@@ -195,6 +216,6 @@ InterestGraph.prototype.switchCategory = function() {
   this.selectedData = this.data.get(this.selectedCategory)
 
   target.classed("selectedCategory", true)
-  this.render()
+  this.renderGraph()
 
 }
