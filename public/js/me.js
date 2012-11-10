@@ -8,7 +8,8 @@ var Me = function() {
 
 
   this.links = [{ type: "linkedin", url: "http://www.linkedin.com/in/brudolph", image: "images/linkedin.png" },
-                { type: "wordpress", url: "http://www.pennyhacks.com", image: "images/wordpress.png" }]
+                { type: "wordpress", url: "http://www.pennyhacks.com", image: "images/wordpress.png" },
+                { type: "github", url: "http://www.github.com/benrudolph", image: "images/github.png" }]
 
   this.radius = 75
   this.radiusMain = 150
@@ -24,9 +25,9 @@ var Me = function() {
   this.xLink = d3
       .scale
       .ordinal()
-      .rangePoints([(this.width / 2) - ((this.links.length / 2) * this.radiusLink) - (this.radiusLink / 4),
-                    (this.width / 2) + ((this.links.length / 2) * this.radiusLink) + (this.radiusLink / 4)])
-      .domain(["linkedin", "wordpress"])
+      .rangePoints([(this.width / 2) - ((this.links.length / 2) * 1.5 * this.radiusLink) - (this.radiusLink / 4),
+                    (this.width / 2) + ((this.links.length / 2) * 1.5 * this.radiusLink) + (this.radiusLink / 4)])
+      .domain(["linkedin", "wordpress", "github"])
 
   this.y = d3
       .scale
