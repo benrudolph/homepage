@@ -86,7 +86,8 @@ Beaker.prototype.render = function(isDisplayed) {
         return clazz
       })
       .on("click", function(d) {
-        window.open(d.link, '_blank');
+        if (!d.children)
+          window.open(d.link, '_blank');
       })
       .on("mouseover", this.displayInfo.bind(this))
       .on("mouseout", this.hideInfo.bind(this))
