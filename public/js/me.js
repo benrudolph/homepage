@@ -119,7 +119,7 @@ var Me = function() {
       name: "Support CRES",
       link: "http://supportcres.org",
       size: 61,
-      description: "This is a website for a school for the deaf in Cameroon, Africa. My sister, Lisa, volunteered at the school for 3 months and is currently raising money and awareness about the school. The website explains CRES' mission and life at the school.",
+      description: "This is a website for a school for the deaf in Cameroon, Africa. My sister, Lisa, volunteered at the school for 3 months and is currently raising money for and awareness of the school. The website explains CRES' mission and life at the school.",
       image: "images/cres.png"
     },
     {
