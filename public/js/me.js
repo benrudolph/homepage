@@ -104,14 +104,14 @@ var Me = function() {
   this.beakerData = [{
     children: [{
       name: "Africa Refugee Visualization",
-      link: "http://vast-gorge-6646.herokuapp.com/",
+      link: "http://africanrefugees.herokuapp.com/",
       size: 100,
       description: "This is a visualization of refugee camp populations in Africa. It allows you to select groups of camps on the scatter plots and then immediately see where those camps are located allowing for some interesting conclusions. Also by clicking a marker you can see the exact age breakdown for that particular camp.",
       image: "images/africarefugees.png"
     },
     {
-      name: "8th Grade Visualization",
-      link: "http://mysterious-spire-4062.herokuapp.com/",
+      name: "Student Surveys Visualization",
+      link: "http://studentsurveys.herokuapp.com/",
       size: 90,
       description: "I worked on this with a partner, Reno Bowen, in my Data Visualization class. We basically took an exhuastive study of 8th graders and found the most interesting patterns and made an interactive visualization. We used Tableau for prototyping and d3.js for the actual implementation.",
       image: "images/parallelcoords.png"
@@ -132,10 +132,17 @@ var Me = function() {
     },
     {
       name: "International Refugee Flows",
-      link: "http://blooming-brook-1209.herokuapp.com/",
+      link: "http://refugeeflows.herokuapp.com/",
       size: 80,
       description: "I made this from data supplied by the UN. It basically maps out for each country where its refugee population originates. The contrast between different regions leads to insights about some of the different problems refugees face when fleeing to a different country.",
       image: "images/refugeeflows.png"
+    },
+    {
+      name: "Type I Diabetes Visualization",
+      link: "http://diabetesvis.herokuapp.com/",
+      size: 100,
+      description: "This visualization helps clinicians understand their diabetic patients' blood glucose levels. My partner, Reno, and I built this using 4 years worth blood glucose data from an actual patient.",
+      image: "images/diabetesvis.png"
     },
     {
       name: "Dogger",
