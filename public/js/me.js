@@ -73,7 +73,7 @@ var Me = function() {
     ],
     frameworks: [
       { interest: "ruby on rails",
-        score: 46 },
+        score: 83 },
       { interest: "node.js",
         score: 83 },
       { interest: "django",
