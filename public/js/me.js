@@ -117,6 +117,13 @@ var Me = function() {
       image: "images/parallelcoords.png"
     },
     {
+      name: "Global Contraceptive Usage",
+      link: "http://contraceptivevis.herokuapp.com/",
+      size: 70,
+      description: "This was a quick visualization I coded up after finding an interesting dataset about contraceptive usage around the world. I was prompted to do this after reading countless tables in a feminist studies class and wanted to spice up the numbers a bit.",
+      image: "images/contraceptivevis.png"
+    },
+    {
       name: "Support CRES",
       link: "http://supportcres.org",
       size: 61,
