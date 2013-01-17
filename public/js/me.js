@@ -123,13 +123,13 @@ var Me = function() {
       description: "This was a quick visualization I coded up after finding an interesting dataset about contraceptive usage around the world. I was prompted to do this after reading countless tables in a feminist studies class and wanted to spice up the numbers a bit.",
       image: "images/contraceptivevis.png"
     },
-    {
+    /*{
       name: "Support CRES",
       link: "http://supportcres.org",
       size: 61,
       description: "This is a website for a school for the deaf in Cameroon, Africa. My sister, Lisa, volunteered at the school for 3 months and is currently raising money for and awareness of the school. The website explains CRES' mission and life at the school.",
       image: "images/cres.png"
-    },
+    },*/
     {
       name: "Hacker News Predict",
       link: "/report.pdf",
