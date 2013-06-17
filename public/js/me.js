@@ -8,7 +8,6 @@ var Me = function() {
 
 
   this.links = [{ type: "linkedin", url: "http://www.linkedin.com/in/brudolph", image: "images/linkedin.png" },
-                { type: "wordpress", url: "http://www.pennyhacks.com", image: "images/wordpress.png" },
                 { type: "github", url: "http://www.github.com/benrudolph", image: "images/github.png" }]
 
   this.radius = 75
