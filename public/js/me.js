@@ -26,7 +26,7 @@ var Me = function() {
       .ordinal()
       .rangePoints([(this.width / 2) - ((this.links.length / 2) * 1.5 * this.radiusLink) - (this.radiusLink / 4),
                     (this.width / 2) + ((this.links.length / 2) * 1.5 * this.radiusLink) + (this.radiusLink / 4)])
-      .domain(["linkedin", "wordpress", "github"])
+      .domain(["linkedin", "github"])
 
   this.y = d3
       .scale
