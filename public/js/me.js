@@ -8,6 +8,7 @@ var Me = function() {
 
 
   this.links = [{ type: "linkedin", url: "http://www.linkedin.com/in/brudolph", image: "images/linkedin.png" },
+                { type: "wordpress", url: "http://bengermin.wordpress.com/", image: "images/wordpress.png" },
                 { type: "github", url: "http://www.github.com/benrudolph", image: "images/github.png" }]
 
   this.radius = 75
@@ -26,7 +27,7 @@ var Me = function() {
       .ordinal()
       .rangePoints([(this.width / 2) - ((this.links.length / 2) * 1.5 * this.radiusLink) - (this.radiusLink / 4),
                     (this.width / 2) + ((this.links.length / 2) * 1.5 * this.radiusLink) + (this.radiusLink / 4)])
-      .domain(["linkedin", "github"])
+      .domain(this.links.map(function(link) { return link.type }))
 
   this.y = d3
       .scale
@@ -278,7 +279,7 @@ Me.prototype.renderHome = function(animate, isDisplayed) {
       }.bind(this))
       .attr("y", this.yLink - this.radiusLink)
       .on("click", function(d) {
-        window.open(d.url, "_blank")
+        window.open(d.url)
       })
 
   circles
